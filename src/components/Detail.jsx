@@ -23,7 +23,7 @@ const Detail = () => {
   };
   useEffect(() => {
     getUrl();
-  }, []);
+  }, [download]);
   return (
     <div>
       <a
