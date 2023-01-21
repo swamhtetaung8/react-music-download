@@ -23,10 +23,11 @@ const Detail = () => {
   };
   useEffect(() => {
     getUrl();
-  }, [download]);
+  }, []);
   return (
     <div>
       <a
+        target={"_blank"}
         href={download}
         className="p-3 bg-blue-400 rounded-md block w-40 text-center m-3 text-white">
         Download
