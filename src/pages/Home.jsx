@@ -1,7 +1,7 @@
 import axios from "axios";
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
-import Card from "./Card";
+import Card from "../components/Card";
 
 const Home = () => {
   const [name, setName] = useState("");

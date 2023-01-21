@@ -1,11 +1,10 @@
-import { data } from "autoprefixer";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 const Detail = () => {
   const { id } = useParams();
-  const [download, setDownload] = useState([]);
+  const [download, setDownload] = useState("");
   const getUrl = async () => {
     const { data } = await axios.get(
       "https://youtube-music-downloader-mp3.p.rapidapi.com/get_download_url",
