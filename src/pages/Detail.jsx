@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 const Detail = () => {
   const { id } = useParams();
-  const [download, setDownload] = useState("");
+  // const [download, setDownload] = useState("");
   const getUrl = async () => {
     const { data } = await axios.get(
       "https://youtube-music-downloader-mp3.p.rapidapi.com/get_download_url",
@@ -17,20 +17,20 @@ const Detail = () => {
         },
       }
     );
-    setDownload(data.result.download_url);
+    // setDownload(data.result.download_url);
     console.log(data);
+    location.href = data.result.download_url;
   };
-  useEffect(() => {
-    getUrl();
-  }, []);
+  // useEffect(() => {
+  //   getUrl();
+  // }, []);
   return (
     <div>
-      <a
-        target={"_blank"}
-        href={download}
+      <button
+        onClick={() => getUrl()}
         className="p-3 bg-blue-400 rounded-md block w-40 text-center m-3 text-white">
         Download
-      </a>
+      </button>
     </div>
   );
 };

@@ -2,6 +2,7 @@ import axios from "axios";
 import { debounce } from "lodash";
 import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const Home = () => {
   const [name, setName] = useState("");
@@ -26,13 +27,17 @@ const Home = () => {
   }, [name]);
   return (
     <div className=" container mx-auto">
-      <input
-        type="text"
-        className=" outline-none border-b-2 border-gray-400 py-2"
-        placeholder="Search songs"
-        // value={name}
-        onChange={debounce((e) => setName(e.target.value), 1000)}
-      />
+      <div className="flex items-center border px-3 rounded w-72 mt-3">
+        <AiOutlineSearch />
+        <input
+          type="text"
+          className=" ml-3 outline-none py-2"
+          placeholder="Search songs"
+          // value={name}
+          onChange={debounce((e) => setName(e.target.value), 1000)}
+        />
+      </div>
+
       <div className="flex flex-wrap gap-5 justify-center my-5">
         {songs?.map((song) => (
           <Card song={song} key={song.id} />
